@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html >
+   <head >
+      <title >Thank you</title>
+      <meta content="text/html; charset=utf-8" http-equiv='Content-Type'/>
+      <style >
+h2 
+{
+	font-family:Arial, sans-serif; 
+}
+
+body
+{
+	font-family:Arial, sans-serif; 
+	line-height:1.5em;
+	background-color:transparent
+}
+      </style>
+      <meta name='GENERATOR' content='MSHTML 11.00.9600.17496'/>
+   </head>
+   <body >
+      <h2 align='center'>
+         <font color='#a52a00'>Thank You %Name%!</font>
+      </h2>
+      <div align='center'>We will get back to you as soon as possible...</div>
+      <p align='center'>
+Please follow us on          <br />
+      </p>
+   </body>
+</html>

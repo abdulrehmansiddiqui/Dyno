@@ -1,0 +1,580 @@
+/**
+ * fullPage 2.6.0
+ * https://github.com/alvarotrigo/fullPage.js
+ * MIT licensed
+ *
+ * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
+ */
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow:hidden;
+
+    /*Avoid flicker on slides transitions for mobile phones #336 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+#superContainer {
+    height: 100%;
+    position: relative;
+
+    /* Touch detection for Windows 8 */
+    -ms-touch-action: none;
+
+    /* IE 11 on Windows Phone 8.1*/
+    touch-action: none;
+}
+.fp-section {
+    position: relative;
+    -webkit-box-sizing: border-box; /* Safari<=5 Android<=3 */
+    -moz-box-sizing: border-box; /* <=28 */
+    box-sizing: border-box;
+}
+.fp-slide {
+    float: left;
+}
+.fp-slide, .fp-slidesContainer {
+    height: 100%;
+    display: block;
+}
+.fp-slides {
+    z-index:1;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: all 0.3s ease-out; /* Safari<=6 Android<=4.3 */
+    transition: all 0.3s ease-out;
+}
+.fp-section.fp-table, .fp-slide.fp-table {
+    display: table;
+    table-layout:fixed;
+    width: 100%;
+}
+.fp-tableCell {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+}
+.fp-slidesContainer {
+    float: left;
+    position: relative;
+}
+.fp-controlArrow {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    margin-top: -38px;
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+.fp-controlArrow.fp-prev {
+    left: 15px;
+    width: 0;
+    border-width: 38.5px 34px 38.5px 0;
+    border-color: transparent #fff transparent transparent;
+}
+.fp-controlArrow.fp-next {
+    right: 15px;
+    border-width: 38.5px 0 38.5px 34px;
+    border-color: transparent transparent transparent #fff;
+}
+.fp-scrollable {
+    overflow: scroll;
+}
+.fp-notransition {
+    -webkit-transition: none !important;
+    transition: none !important;
+}
+#fp-nav {
+    position: fixed;
+    z-index: 100;
+    margin-top: -32px;
+    top: 50%;
+    opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+}
+#fp-nav.right {
+    right: 17px;
+}
+#fp-nav.left {
+    left: 17px;
+}
+.fp-slidesNav{
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    opacity: 1;
+}
+.fp-slidesNav.bottom {
+	bottom: 90px;
+}
+.fp-slidesNav.top {
+	top: 60px;
+}
+#fp-nav ul,
+.fp-slidesNav ul {
+  margin: 0;
+  padding: 0;
+}
+#fp-nav ul li,
+.fp-slidesNav ul li {
+    display: block;
+    width: 14px;
+    height: 13px;
+    margin: 7px;
+    position:relative;
+}
+.fp-slidesNav ul li {
+    display: inline-block;
+}
+#fp-nav ul li a,
+.fp-slidesNav ul li a {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+#fp-nav ul li a.active span,
+.fp-slidesNav ul li a.active span,
+#fp-nav ul li:hover a.active span,
+.fp-slidesNav ul li:hover a.active span{
+    height: 12px;
+    width: 12px;
+    margin: -6px 0 0 -6px;
+    border-radius: 100%;
+ }
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+	border-radius: 50%;
+	position: absolute;
+	z-index: 1;
+	height: 4px;
+	width: 4px;
+	border: 0;
+	left: 50%;
+	top: 50%;
+	margin: -2px 0 0 -2px;
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
+	background-color: #FFF;
+}
+#fp-nav ul li:hover a span,
+.fp-slidesNav ul li:hover a span{
+    width: 10px;
+    height: 10px;
+    margin: -5px 0px 0px -5px;
+}
+#fp-nav ul li .fp-tooltip {
+    position: absolute;
+    top: -2px;
+    color: #fff;
+    font-size: 14px;
+    font-family: arial, helvetica, sans-serif;
+    white-space: nowrap;
+    max-width: 220px;
+    overflow: hidden;
+    display: block;
+    opacity: 0;
+    width: 0;
+}
+#fp-nav ul li:hover .fp-tooltip,
+#fp-nav.fp-show-active a.active + .fp-tooltip {
+    -webkit-transition: opacity 0.2s ease-in;
+    transition: opacity 0.2s ease-in;
+    width: auto;
+    opacity: 1;
+}
+#fp-nav ul li .fp-tooltip.right {
+    right: 20px;
+}
+#fp-nav ul li .fp-tooltip.left {
+    left: 20px;
+}
+
+
+
+
+
+	/* Style for our header texts
+	* --------------------------------------- */
+
+
+	/* Centered texts in each section
+	* --------------------------------------- */
+	.section{
+	text-align: left;
+	}
+
+
+	/* Backgrounds will cover all the section
+	* --------------------------------------- */
+	#section0,
+	#section1,
+	#section2,
+	#section3{
+		background-size: cover;
+	}
+
+	/* Defining each section background and styles
+	* --------------------------------------- */
+	#section0{
+	background-image: url(../imgs/bg.png);
+	background-color: #BE1E2D;
+	}
+	#section1{
+	background-image: url(../imgs/bg.png);
+	background-color: #990000;
+	}
+#section-learn {
+	background-image: url(../imgs/bg.png);
+	background-color: #006600;
+}
+
+	#section2{
+		background-image: url(../imgs/bg.png);
+		background-color: #F06623;
+	}
+	#section3{
+		background-image: url(../imgs/bg.png);
+		background-color: #FCB934;
+	}
+	#section4{
+		background-image: url(../imgs/bg.png);
+		background-color: #911841;
+	}
+	#section3 h1{
+		color: #000;
+	}
+
+
+ 	/*Adding background for the slides
+	* --------------------------------------- */
+	#slide1{
+		background-image: url(../imgs/bg.png);
+		background-color: #60C;
+	}
+	#slidegreen{
+		background-image: url(../imgs/bg.png);
+		background-color: #48A842;
+	}
+	#slidepink{
+		background-image: url(../imgs/bg.png);
+		background-color: #E71857;
+	}
+	#slideperpul{
+		background-image: url(../imgs/bg.png);
+		background-color: #911841;
+	}
+	#slideorange{
+		background-image: url(../imgs/bg.png);
+		background-color: #F06623;
+	}
+#slideyellow {
+	background-image: url(../imgs/bg.png);
+	background-color: #FFCC00;
+}
+
+	#slidered{
+		background-image: url(../imgs/bg.png);
+		background-color: #BE1E2D;
+
+	}
+	#slidemaroon{
+	background-image: url(../imgs/bg3.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	}
+#slidegummies-main {
+	background-image: url(../imgs/bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #48A842;
+}
+#slidegummies-strawberry {
+	background-image: url(../imgs/bg-gummies.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #BE1E2D;
+}
+#slidegummies-raspberry {
+	background-image: url(../imgs/bg-gummies.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #52AE52;
+}
+#slidegummies-orange {
+	background-image: url(../imgs/bg-gummies.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #FFD35A;
+}
+#slidegummies-cherry {
+	background-image: url(../imgs/bg-gummies.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #861E36;
+}
+#slidegummies-cola {
+	background-image: url(../imgs/bg-gummies.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: #520D11;
+}
+
+#slidemallows-main {
+	background-image: url(../imgs/bg-mallows-main.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#slidemallows-strawberry {
+	background-image: url(../imgs/bg-mallows-strawberry.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#slidemallows-mango {
+	background-image: url(../imgs/bg-mallows-mango.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#slidemallows-grapes {
+	background-image: url(../imgs/bg-mallows-grapes.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#slidemallows-cherry {
+	background-image: url(../imgs/bg-mallows-cherry.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#slidecone-main {
+	background-image: url(../imgs/bg-cone-strawberry.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#slidecone-orange {
+	background-image: url(../imgs/bg-cone-orange.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#slidecone-strawberry {
+	background-image: url(../imgs/bg-cone-strawberry.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.slide {
+	position: relative;
+}
+
+.page-img1 {
+	position: absolute;
+	top: 400px;
+}
+.page-img2 {
+	position: absolute;
+	top: 600px;
+	left: 400px;
+}
+.page-img3 {
+	position: absolute;
+	top: 500px;
+	left: 700px;
+}
+
+.spaceing{
+	width:100%;
+	height:120px;
+}
+
+.dynonav {
+	width: 460px;
+	height: 80px;
+	z-index: 1200;
+	margin-left: auto;
+	margin-right: auto;
+}
+.dynonav1 {
+	margin-left: auto;
+	margin-right: auto;
+}
+    .product1 {
+		position:absolute;
+		bottom:0px;
+	}
+    .product2 {
+		position:absolute;
+		margin-left:166px;
+		bottom:0px;
+	}
+    .product3 {
+		position:absolute;
+		margin-left:357px;
+		bottom:0px;
+	}
+    .product4 {
+		position:absolute;
+		margin-left:603px;
+		bottom:0px;
+	}
+    .product5 {
+		position:absolute;
+		margin-left:795px;
+		bottom:0px;
+	}
+    .product6 {
+		position:absolute;
+		bottom:0px;
+	}
+    .product7 {
+		position:absolute;
+		margin-left:185px;
+		bottom:0px;
+	}
+    .product8 {
+		position:absolute;
+		margin-left:433px;
+		bottom:0px;
+	}
+    .product9 {
+		position:absolute;
+		margin-left:680px;
+		bottom:0px;
+	}
+    .product10 {
+		position:absolute;
+		bottom:0px;
+	}
+    .product11 {
+		position:absolute;
+		margin-left:250px;
+		bottom:0px;
+	}
+.page-title {
+	position: absolute;
+	width: 223px;
+	height: 130px;
+	right: 200px;
+	top: 55px;
+	background-repeat: no-repeat;
+}
+.page-title-heading {
+	font-weight:300;
+	font-size:32px;
+	color:#FFF;
+	text-align:center;
+}
+
+.page-title-gummies {
+	position: absolute;
+	width: 215px;
+	height: 182px;
+	right: 200px;
+	background-image: url(../imgs/dyno-gummies-lables.png);
+	background-repeat: no-repeat;
+}
+.page-title-mallows {
+	position: absolute;
+	width: 194px;
+	height: 185px;
+	right: 200px;
+	background-image: url(../imgs/dyno-mallows-lables.png);
+	background-repeat: no-repeat;
+}
+.page-title-cone {
+	position: absolute;
+	width: 274px;
+	height: 235px;
+	right: 200px;
+	background-image: url(../imgs/dyno-cone-lables.png);
+	background-repeat: no-repeat;
+}
+
+
+.product {
+	margin-top: 35px;
+	width: 850px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	}
+.product-move img{
+	-webkit-transition: -webkit-transform .2s ease-in-out;
+	-ms-transition: -ms-transform .2s ease-in-out;
+	transition: transform .2s ease-in-out;
+}
+.product-move img:hover{
+	transform: scale(1.1,1.1);
+	z-index: 1199;
+}
+.product-image {
+	width: 340px;
+	float: left;
+	padding-top: 70px;
+	margin-left: 75px;
+	z-index: 5;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.product-image-blur-gummies {
+
+}
+.product-image-blur-cone{
+
+}
+.product-image img {
+	-webkit-transition: -webkit-transform .2s ease-in-out;
+	-ms-transition: -ms-transform .2s ease-in-out;
+	transition: transform .2s ease-in-out;
+	height: auto;
+	width: 95%;
+}
+.product-image img:hover{
+  transform:scale(1.1,1.1);
+}
+.product-details {
+	padding-top: 60px;
+	position: absolute;
+	left: 430px;
+	top: 0px;
+}
+.product-details h2{
+	font-family: 'Shadows Into Light', cursive;
+	font-size:40px;
+	color:#FFF;
+	margin-top:20px
+}
+.product-details-flavor {
+	width: 100px;
+	margin-top: 50px;
+}
+.product-details-flavor img{
+	width: 95%;
+}
+.product-details-desc {
+	margin-top:15px;
+	color:#FFF;
+	font-size:20px;
+	font-weight:300;
+}
+.product-details-link {
+	margin-top: 10px;
+}
+.product-details-link a {
+	font-size: 14px;
+	color: #000;
+}
+.product-details-link a:hover {
+	text-decoration:underline;
+}

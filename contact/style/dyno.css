@@ -1,0 +1,256 @@
+#dyno .element_label
+{
+    font-family:Arial;
+    font-size:12px;
+    color:#000000;
+}
+#dyno .error_strings
+{
+    font-family:Verdana;
+    font-size:10px;
+    color:#660000;
+    border-style:solid;
+    border-width:0px;
+    border-color:#000000;
+}
+#dyno .sfm_float_error_box
+{
+    position:absolute;
+    z-index:999;
+    cursor:default;
+    font-family:Titillium Web;
+    font-size:10px;
+    color:#ff0000;
+    background-color:#ffffff;
+    border-style:solid;
+    border-width:1px;
+    border-color:#660000;
+}
+#dyno .sfm_float_box_td
+{
+    padding:3px;
+    cursor:default;
+    font-family:Titillium Web;
+    font-size:10px;
+    color:#ff0000;
+    background-color:#ffffff;
+}
+#dyno .sfm_close_box
+{
+    font-family:Titillium Web;
+    font-size:10px;
+    font-weight:bold;
+    color:#ffffff;
+    background-color:#660000;
+    border-width:0px;
+    text-align:center;
+}
+#dyno .sfm_cr_box
+{
+    font-family:Titillium Web;
+    font-size:10px;
+    color:#888888;
+    border-style:solid;
+    border-width:0px;
+    border-color:#660000;
+}
+#dyno .sfm_cr_box a
+{
+    color:#888888;
+}
+#dyno .sfm_textbox
+{
+    padding:2px;
+}
+#dyno .sfm_textarea
+{
+    padding:2px;
+}
+#dyno .sfm_form_label
+{
+    font-family:Arial;
+    font-size:12px;
+    color:#000000;
+}
+#dyno .sfm_image_in_form
+{
+    border:0;
+}
+#dyno .sfm_captcha
+{
+    border:0;
+}
+#dyno .sfm_datepicker_icon
+{
+    border:0;
+}
+
+#dyno #label1_container
+{
+    position:absolute;
+    left:261px;
+    top:14px;
+    width:45px;
+    height:20px;
+    z-index:5;
+}
+#dyno #label1
+{
+    position:absolute;
+    left:7px;
+    top:0px;
+    text-align:right;
+}
+#dyno #label_container
+{
+    position:absolute;
+    left:22px;
+    top:13px;
+    width:36px;
+    height:21px;
+    z-index:3;
+}
+#dyno #label
+{
+    position:absolute;
+    left:-4px;
+    top:0px;
+    text-align:right;
+}
+#dyno #label3_container
+{
+    position:absolute;
+    left:13px;
+    top:45px;
+    width:45px;
+    height:20px;
+    z-index:9;
+}
+#dyno #label3
+{
+    position:absolute;
+    left:3px;
+    top:0px;
+    text-align:right;
+}
+#dyno #label2_container
+{
+    position:absolute;
+    left:256px;
+    top:44px;
+    width:52px;
+    height:21px;
+    z-index:7;
+}
+#dyno #label2
+{
+    position:absolute;
+    left:0px;
+    top:0px;
+    text-align:right;
+}
+#dyno #label5_container
+{
+    position:absolute;
+    left:6px;
+    top:71px;
+    width:54px;
+    height:21px;
+    z-index:11;
+}
+#dyno #label5
+{
+    position:absolute;
+    left:-3px;
+    top:0px;
+    text-align:right;
+}
+#dyno #Name_container
+{
+    position:absolute;
+    left:64px;
+    top:4px;
+    z-index:4;
+}
+#dyno #Name
+{
+    float:left;
+    width:178px;
+    z-index:4;
+    border-radius: 5px;
+}
+#dyno #Email_container
+{
+    position:absolute;
+    left:312px;
+    top:4px;
+    z-index:6;
+}
+#dyno #Email
+{
+    float:left;
+    width:180px;
+    z-index:6;
+    border-radius: 5px;
+}
+#dyno #Phone_container
+{
+    position:absolute;
+    left:64px;
+    top:36px;
+    z-index:10;
+}
+#dyno #Phone
+{
+    float:left;
+    width:180px;
+    z-index:10;
+    border-radius: 5px;
+}
+#dyno #Address_container
+{
+    position:absolute;
+    left:312px;
+    top:36px;
+    z-index:8;
+}
+#dyno #Address
+{
+    float:left;
+    width:180px;
+    z-index:8;
+    border-radius: 5px;
+}
+#dyno #Message_container
+{
+    position:absolute;
+    left:64px;
+    top:72px;
+    z-index:12;
+}
+#dyno #Message
+{
+    float:left;
+    width:178px;
+    height:102px;
+    z-index:12;
+    border-radius: 5px;
+}
+#dyno #Captcha_container
+{
+    position:absolute;
+    left:312px;
+    top:68px;
+    width:184px;
+    height:132px;
+    z-index:1;
+}
+#dyno #Submit
+{
+    position:absolute;
+    left:64px;
+    top:200px;
+    width:432px;
+    height:32px;
+    z-index:2;
+}

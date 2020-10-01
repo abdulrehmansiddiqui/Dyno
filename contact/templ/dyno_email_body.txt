@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html >
+   <head >
+      <title ></title>
+      <meta content="text/html; charset=utf-8" http-equiv='Content-Type'/>
+      <style type='text/css'>
+BODY {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+	margin-top:0;
+	margin-left:20px;
+}
+
+td{
+    font-size : 10pt;
+	text-align: left;
+}
+
+td.FieldName{
+	font-weight:bold;
+	vertical-align: top;
+}
+
+td.FieldValue {
+	font-family : Arial, Helvetica, sans-serif;
+	font-size : 10pt;
+}
+
+td.ExtraInfoName {
+	font-family : Verdana, Helvetica, sans-serif;
+	font-size : 8pt;
+	border-bottom:0px;
+	font-weight:bold;
+}
+
+td.ExtraInfoValue {
+	font-family : Verdana, Helvetica, sans-serif;
+	font-size : 8pt;
+	border-bottom:0px;
+}
+fieldset {
+	display:block; 
+	border-color: #ddddFF;
+        border-width: 1px 0 0 0;
+        border-style: solid none none none;
+	padding:5px; 
+	font-family:verdana, sans-serif; 
+	margin-bottom:0.5em; 
+}
+      </style>
+      <meta name='GENERATOR' content='MSHTML 11.00.9600.17496'/>
+   </head>
+   <body style='BACKGROUND-COLOR: transparent'>
+      <div >
+         <img src='http://dynotreats.com/imgs/dyno-logo4.png'/>
+      </div>
+      <div >
+The following data was submitted in the&nbsp;Dyno&nbsp;Treats Web Site 
+Contact Form&nbsp;
+      </div>
+      <img style='HEIGHT: 265px; WIDTH: 188px' src='http://dynotreats.com/imgs/contact-dyno.png' width='266' height='419'/>
+      <div style='POSITION: absolute; LEFT: 194px; MARGIN-TOP: 80px; TOP: 161px; BACKGROUND-COLOR: #fff'>
+         <table cellSpacing='0' cellPadding='5' width='400'>
+            <tbody >
+               <tr >
+                  <td class='FieldName'>Name </td>
+                  <td class='FieldValue'>%Name% </td>
+               </tr>
+               <tr >
+                  <td class='FieldName'>Email </td>
+                  <td class='FieldValue'>%Email% </td>
+               </tr>
+               <tr >
+                  <td class='FieldName'>Phone </td>
+                  <td class='FieldValue'>%Phone% </td>
+               </tr>
+               <tr >
+                  <td class='FieldName'>Address </td>
+                  <td class='FieldValue'>%Address% </td>
+               </tr>
+               <tr >
+                  <td class='FieldName'>Message </td>
+                  <td class='FieldValue'>%Message% </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <div class='table_container'>
+         <p >&nbsp;</p>
+         <hr />
+         <fieldset style='WIDTH: 450px'>
+            <legend >More Info</legend>
+            <table cellSpacing='0' cellPadding='5'>
+               <tbody >
+                  <tr >
+                     <td class='ExtraInfoName'>FormSubmissionTime </td>
+                     <td class='ExtraInfoValue'>%_sfm_form_submision_time_% </td>
+                  </tr>
+                  <tr >
+                     <td class='ExtraInfoName'>VisitorsIP </td>
+                     <td class='ExtraInfoValue'>
+%_sfm_visitor_ip_%                         <br />
+                        <a href='http://www.ip2location.com/free.asp?ipaddresses=%_sfm_visitor_ip_%'>
+Locate 
+      it!
+                        </a>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </fieldset>
+      </div>
+      <div >
+         <table cellSpacing='0' cellPadding='0' width='100%' border='0'>
+            <tbody >
+               <tr >
+                  <td style='COLOR: #fff; TEXT-ALIGN: center'>
+                     <img style='MARGIN-BOTTOM: -10px' src='http://dynotreats.com/imgs/footer-strip.png'/>
+                  </td>
+               </tr>
+               <tr >
+                  <td style='COLOR: #fff; TEXT-ALIGN: center' bgColor='#571412'>
+                     <p >
+Please follow us on                         <br />
+                        <a href='https://www.facebook.com/dynotreats?fref=ts'>
+                           <img border='0' alt='Dyno Treats' src='http://dynotreats.com/imgs/facebook.png' width='25' height='25'/>
+                        </a>
+&nbsp;&nbsp;&nbsp;&nbsp;                         <a href='https://instagram.com/dynotreats/'>
+                           <img border='0' alt='Dyno Treats' src='http://dynotreats.com/imgs/Instagram.png' width='25' height='25'/>
+                        </a>
+                        <br />
+                        <br />
+© DYNO Treats Ltd. UK.
+                     </p>
+                  </td>
+               </tr>
+               <tr >
+                  <td style='COLOR: #fff; TEXT-ALIGN: center' bgColor='#ffffff'>
+                     <font color='#cccccc' size='1' face='Verdana, Geneva, sans-serif'>
+Desing by 
+      arafys.com
+                     </font>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <div >
+         <font color='#cccccc' size='1' face='Verdana, Geneva, sans-serif'>
+            <center ></center>
+         </font>
+      </div>
+   </body>
+</html>

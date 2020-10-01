@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+   <head >
+      <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+      <title >Form Page: dyno</title>
+      <script src='scripts/gen_validatorv5.js' type='text/javascript'></script>
+      <script src='scripts/sfm_captcha_validator.js' type='text/javascript'></script>
+      <link rel='stylesheet' type='text/css' href='style/dyno.css'/>
+   </head>
+   <body style='background-color:transparent'>
+      <form id='dyno' method='post' action='%sfm_self_script%' accept-charset='UTF-8'>
+         <div id='dyno_errorloc' class='error_strings' style='width:512px;text-align:left'>%sfm_error_display_loc%</div>
+         <div id='dyno_outer_div' style='width:512px;height:240px'>
+            <div style='position:relative' id='dyno_inner_div'>
+               <input type='hidden' name='sfm_form_submitted' value='yes'/>
+               <div id='label1_container'>
+                  <label id='label1' for='Email' class='sfm_form_label'>Email</label>
+               </div>
+               <div id='label_container'>
+                  <label id='label' for='Name' class='sfm_form_label'>Name</label>
+               </div>
+               <div id='label3_container'>
+                  <label id='label3' for='Phone' class='sfm_form_label'>Phone</label>
+               </div>
+               <div id='label2_container'>
+                  <label id='label2' for='Address' class='sfm_form_label'>Address</label>
+               </div>
+               <div id='label5_container'>
+                  <label id='label5' for='Message' class='sfm_form_label'>Message</label>
+               </div>
+               <div id='Name_container'>
+                  <input type='text' name='Name' id='Name' value='%Name%' size='20' tabindex='1' class='sfm_textbox'/>
+               </div>
+               <div id='Email_container'>
+                  <input type='text' name='Email' id='Email' value='%Email%' size='20' tabindex='2' class='sfm_textbox'/>
+               </div>
+               <div id='Phone_container'>
+                  <input type='text' name='Phone' id='Phone' value='%Phone%' size='20' tabindex='3' class='sfm_textbox'/>
+               </div>
+               <div id='Address_container'>
+                  <input type='text' name='Address' id='Address' value='%Address%' size='20' tabindex='4' class='sfm_textbox'/>
+               </div>
+               <div id='Message_container'><textarea name='Message' id='Message' tabindex='5' class='sfm_textarea'>%Message%</textarea></div>
+               <div id='Captcha_container'>
+                  <div >
+                     <img class='sfm_captcha' id='img_Captcha' src='%sfm_self_script%?sfm_get_captcha=1' width='150' height='60' alt='Captcha'/>
+                  </div>
+                  <div class='element_label'>Please enter the code above in the box below.</div>
+                  <div >
+                     <input type='text' name='sfm_captcha_Captcha' tabindex='6'style="border-radius: 5px;"/>
+                  </div>
+                  <div class='element_label'>
+                     <small >Refresh above captcha <a href="javascript: refresh_captcha_img_Captcha()" >here</a></small>
+                  </div>
+               </div>
+               <input type='submit' name='Submit' value='Submit' tabindex='7' id='Submit'/>
+            </div>
+         </div>
+      </form>
+      <script type='text/javascript'>
+// <![CDATA[
+function refresh_captcha_img_Captcha()
+{
+	var img = document.images['img_Captcha'];
+	img.src = img.src.substring(0,img.src.lastIndexOf("?"))+"?sfm_get_captcha=1&rand="+Math.random()*1000;
+}
+document.forms['dyno'].sfm_captcha_Captcha.validator 
+  = new SFM_CaptchaValidator(document.forms['dyno'].sfm_captcha_Captcha);
+function sfm_captcha_Captcha_Validate()
+{
+	var captcha_ip = arguments[0];
+	return captcha_ip.validator.validate();
+}
+
+if(document.sfm_after_load != undefined){document.sfm_after_load();}
+
+// ]]>
+      </script>
+      <script type='text/javascript'>
+// <![CDATA[
+var dynoValidator = new Validator("dyno");
+
+dynoValidator.validate_on_killfocus = true;
+dynoValidator.addValidation("Name","req","Please fill in Name");
+dynoValidator.addValidation("Email","email","The input for Email should be a valid email value");
+dynoValidator.addValidation("Email","req","Please fill in Email");
+dynoValidator.addValidation("Phone","req","Please fill in Phone");
+dynoValidator.addValidation("Phone","numeric","The input for Phone should be a valid numeric value");
+dynoValidator.addValidation("Address","req","Please fill in Address");
+dynoValidator.addValidation("Message","req","Please fill in Message");
+dynoValidator.addAddnlValidationFunction(sfm_captcha_Captcha_Validate,document.forms['dyno'].sfm_captcha_Captcha);
+
+// ]]>
+      </script>
+   </body>
+</html>
